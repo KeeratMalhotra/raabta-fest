@@ -1,65 +1,52 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="w-full h-[80vh] flex flex-col items-center justify-center relative overflow-hidden">
+        
+        {/* Decorative Background Element */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-50 z-0" />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="z-10 text-center space-y-6 px-4"
+        >
+          <p className="font-lora italic text-lg text-[#4a0404]/80">The Literature Fest of NSUT</p>
+          <h1 className="font-playfair text-7xl md:text-9xl font-bold text-[#4a0404] tracking-tight">
+            RAABTA
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <div className="w-24 h-1 bg-[#d4af37] mx-auto my-6" /> {/* Gold Divider */}
+          <p className="max-w-xl mx-auto font-lora text-lg leading-relaxed text-gray-700">
+            "Words are, in my not-so-humble opinion, our most inexhaustible source of magic."
+          </p>
+        </motion.div>
+      </section>
+
+      {/* About / Gibberish Section */}
+      <section className="max-w-4xl mx-auto py-20 px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div className="font-lora text-lg leading-8 text-gray-800 space-y-4">
+          <h2 className="font-playfair text-4xl text-[#4a0404] mb-6">A Tale of Words</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        
+        {/* Image Placeholder with Styling */}
+        <div className="relative h-96 w-full border-4 border-[#4a0404] p-2">
+            <div className="w-full h-full bg-gray-200 grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden">
+             {/* Replace src with actual event images */}
+             <img src="/api/placeholder/400/600" alt="Fest Vibes" className="object-cover w-full h-full" />
+            </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
