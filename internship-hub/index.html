@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Keerat · Winter internship hub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top">Internship hub</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#next">Next steps</a>
+        <a href="#shortlist">Shortlist</a>
+        <a href="#nic">NIC pack</a>
+        <a href="#tracker">Tracker</a>
+        <a href="#profile">Profile</a>
+        <a href="#excluded">Excluded</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero" id="top">
+      <p class="eyebrow">Winter internship plan · updated <span id="updated"></span></p>
+      <h1>Keerat's internship hub</h1>
+      <p class="lead" id="target"></p>
+      <div class="stats" id="hero-stats"></div>
+    </section>
+
+    <section class="section" id="next" aria-labelledby="next-h">
+      <div class="section-head">
+        <h2 id="next-h">Next steps</h2>
+        <span class="pill" id="next-progress"></span>
+      </div>
+      <ul class="checklist card" id="next-list"></ul>
+    </section>
+
+    <section class="section" id="shortlist" aria-labelledby="shortlist-h">
+      <div class="section-head">
+        <h2 id="shortlist-h">Shortlist</h2>
+      </div>
+      <p class="muted" id="searched"></p>
+      <div class="options" id="shortlist-cards"></div>
+      <p class="callout" id="timing"></p>
+    </section>
+
+    <section class="section" id="nic" aria-labelledby="nic-h">
+      <div class="section-head">
+        <h2 id="nic-h">NIC application pack</h2>
+        <span class="pill" id="nic-countdown"></span>
+      </div>
+      <p class="callout warn" id="nic-name-note"></p>
+      <p class="muted" id="nic-basis"></p>
+
+      <div class="grid-2">
+        <div class="card" id="nic-docs-card">
+          <div class="card-head">
+            <h3>1. Documents to collect</h3>
+            <span class="pill" id="docs-progress"></span>
+          </div>
+          <ul class="checklist" id="nic-docs"></ul>
+        </div>
+        <div class="card" id="nic-email">
+          <h3>2. Email to NSUT</h3>
+          <div id="nic-email-body"></div>
+        </div>
+      </div>
+
+      <div class="card" id="nic-form-card">
+        <h3>3. Form answers</h3>
+        <div class="table-wrap">
+          <table class="kv-table">
+            <thead><tr><th scope="col">Field</th><th scope="col">Answer</th><th scope="col"><span class="sr-only">Copy</span></th></tr></thead>
+            <tbody id="nic-form"></tbody>
+          </table>
+        </div>
+        <p class="muted small" id="nic-areas-note"></p>
+      </div>
+
+      <div class="card" id="nic-sop">
+        <div class="card-head">
+          <h3>4. Statement of Purpose</h3>
+          <div class="card-actions">
+            <span class="pill" id="sop-count"></span>
+            <button type="button" class="btn" data-copy-key="sop">Copy SOP</button>
+          </div>
+        </div>
+        <div class="textbox" id="sop-text"></div>
+      </div>
+    </section>
+
+    <section class="section" id="tracker" aria-labelledby="tracker-h">
+      <div class="section-head">
+        <h2 id="tracker-h">Tracker</h2>
+      </div>
+      <p class="muted small scroll-hint">Swipe the table sideways to see every column.</p>
+      <div class="card table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Organization</th>
+              <th scope="col">Role</th>
+              <th scope="col">Where</th>
+              <th scope="col">Dates</th>
+              <th scope="col">Stipend</th>
+              <th scope="col">Apply window</th>
+              <th scope="col">Status</th>
+              <th scope="col">Next step</th>
+            </tr>
+          </thead>
+          <tbody id="tracker-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="profile" aria-labelledby="profile-h">
+      <div class="section-head">
+        <h2 id="profile-h">Profile</h2>
+      </div>
+      <div class="grid-2" id="profile-top"></div>
+      <div class="card">
+        <h3>Projects</h3>
+        <div class="projects" id="profile-projects"></div>
+      </div>
+      <div class="grid-2" id="profile-bottom"></div>
+    </section>
+
+    <section class="section" id="excluded" aria-labelledby="excluded-h">
+      <div class="section-head">
+        <h2 id="excluded-h">Checked and excluded</h2>
+      </div>
+      <details class="card">
+        <summary id="excluded-summary"></summary>
+        <ul class="excluded" id="excluded-list"></ul>
+      </details>
+    </section>
+
+    <section class="section" id="sources" aria-labelledby="sources-h">
+      <div class="section-head">
+        <h2 id="sources-h">Sources</h2>
+      </div>
+      <ul class="card sources" id="sources-list"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <p>Prepared by Kiro for Keerat. Content lives in <code>internship-hub/data.js</code>. Checkbox progress is saved in this browser only.</p>
+  </footer>
+
+  <div class="sr-only" aria-live="polite" id="live"></div>
+  <noscript><p class="wrap callout warn">This page needs JavaScript to show its content.</p></noscript>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
